@@ -1,0 +1,5 @@
+Sling-Initial-Content: jcr_root;ignoreImportProviders:=xml,\
+jcr_root/apps/sling-cms/content/branding;overwrite:=true;uninstall:=true;path:=/apps/sling-cms/content/branding,\
+jcr_root/static/clientlibs/oec;overwrite=true;ignoreImportProviders:=xml;path:=/static/clientlibs/oec,\
+jcr_root/static/oec;overwrite=true;ignoreImportProviders:=xml;path:=/static/oec
+-includeresource: target/frontend/dist

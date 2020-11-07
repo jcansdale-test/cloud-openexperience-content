@@ -1,0 +1,38 @@
+{
+    "bundles": [
+        {
+            "id": "cloud.openexperience:cloud.openexperience.content.branding:1.0-SNAPSHOT",
+            "start-order": "20"
+        },
+        {
+            "id": "cloud.openexperience:cloud.openexperience.content.login:1.0-SNAPSHOT",
+            "start-order": "20"
+        }
+    ],
+    "configurations": {
+        "org.apache.sling.commons.crypto.internal.FilePasswordProvider~default": {
+            "names": [
+                "default"
+            ],
+            "path": "/opt/secrets/passwd"
+        },
+        "org.apache.sling.commons.crypto.jasypt.internal.JasyptRandomIvGeneratorRegistrar~default": {
+            "algorithm": "SHA1PRNG"
+        },
+        "org.apache.sling.commons.crypto.jasypt.internal.JasyptRandomSaltGeneratorRegistrar~default": {
+            "algorithm": "SHA1PRNG"
+        },
+        "org.apache.sling.commons.crypto.jasypt.internal.JasyptStandardPBEStringCryptoService~default": {
+            "algorithm": "PBEWITHHMACSHA512ANDAES_256",
+            "saltGenerator.target": "",
+            "securityProviderName": "",
+            "ivGenerator.target": "",
+            "securityProvider.target": "",
+            "keyObtentionIterations": 1000,
+            "names": [
+                "default"
+            ],
+            "stringOutputType": "base64"
+        }
+    }
+}
