@@ -1,11 +1,11 @@
 {
     "bundles": [
         {
-            "id": "cloud.openexperience:cloud.openexperience.content.branding:1.0-SNAPSHOT",
+            "id": "cloud.openexperience:cloud.openexperience.content.branding:${project.version}",
             "start-order": "20"
         },
         {
-            "id": "cloud.openexperience:cloud.openexperience.content.login:1.0-SNAPSHOT",
+            "id": "cloud.openexperience:cloud.openexperience.content.login:${project.version}",
             "start-order": "20"
         }
     ],

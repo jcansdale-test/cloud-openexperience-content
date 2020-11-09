@@ -7,7 +7,7 @@ License. -->
     <modelVersion>4.0.0</modelVersion>
     <groupId>cloud.openexperience</groupId>
     <artifactId>cloud.openexperience.content</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Open Experience Content</name>
     <description>Open Experience Content - open-source Cloud Native Content Management System</description>
@@ -28,17 +28,34 @@ License. -->
         <sling.password>admin</sling.password>
     </properties>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>git@github.com:OpenExperienceCloud/cloud-openexperience-content.git</url>
+        <developerConnection>scm:git:git@github.com:OpenExperienceCloud/cloud-openexperience-content.git</developerConnection>
+        <connection>scm:git:git@github.com:OpenExperienceCloud/cloud-openexperience-content.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <organization>
+        <name>Open Experience Cloud</name>
+        <url>https://openexperience.cloud</url>
+    </organization>
+
     <distributionManagement>
+        <snapshotRepository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/OpenExperienceCloud</url>
+        </snapshotRepository>
         <repository>
             <id>github</id>
-            <name>GitHub Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/OpenExperienceCloud/cloud-openexperience-content</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
+            <url>https://maven.pkg.github.com/OpenExperienceCloud</url>
         </repository>
     </distributionManagement>
 
@@ -50,7 +67,60 @@ License. -->
 
     <build>
         <pluginManagement>
+
             <plugins>
+                <!-- Support releasing to sonatype -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.8</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
 
                 <plugin>
                     <groupId>org.apache.sling</groupId>
@@ -92,6 +162,11 @@ Bundle-DocURL: https://openexperience.cloud]]>
                             <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
                         </archive>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.0.0-M1</version>
                 </plugin>
             </plugins>
         </pluginManagement>

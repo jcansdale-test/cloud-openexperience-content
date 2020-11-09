@@ -8,7 +8,7 @@ License. -->
   <parent>
     <groupId>cloud.openexperience</groupId>
     <artifactId>cloud.openexperience.content</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>cloud.openexperience.content.branding</artifactId>
   <name>Open Experience Content - Branding</name>
@@ -58,7 +58,10 @@ License. -->
     </plugins>
   </build>
 
+  
+
   <dependencies>
+    
 
     <dependency>
       <groupId>javax.jcr</groupId>
