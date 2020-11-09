@@ -28,5 +28,5 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GH_TOKEN }}
         registry: ghcr.io
-    - name: Build with Maven
-      run: mvn -B clean install --file pom.xml
+    - name: Maven Build
+      run: mvn -B clean install --file pom.xml -s apache_settings.xml
