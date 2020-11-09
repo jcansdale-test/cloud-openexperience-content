@@ -19,5 +19,7 @@
     <modules>
         <module>base</module>
         <module>standalone</module>
+        <module>author</module>
+        <module>renderer</module>
     </modules>
 </project>
