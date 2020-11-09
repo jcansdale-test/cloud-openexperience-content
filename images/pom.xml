@@ -21,6 +21,7 @@
         <module>standalone</module>
         <module>author</module>
         <module>renderer</module>
+        <module>webcache</module>
     </modules>
 
     <build>
