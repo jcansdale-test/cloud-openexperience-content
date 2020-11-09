@@ -164,7 +164,7 @@ License. -->
                             <includeClassifier>open-experience-content-author-seed</includeClassifier>
                         </scan>
                         <scan>
-                            <includeClassifier>open-experience-content-author-seed</includeClassifier>
+                            <includeClassifier>open-experience-content-author-runtime</includeClassifier>
                         </scan>
                         <scan>
                             <includeClassifier>open-experience-content-standalone-seed</includeClassifier>
@@ -179,13 +179,37 @@ License. -->
                             <includeClassifier>open-experience-content-renderer-seed</includeClassifier>
                         </scan>
                         <scan>
-                            <includeClassifier>open-experience-content-renderer-seed</includeClassifier>
+                            <includeClassifier>open-experience-content-renderer-runtime</includeClassifier>
                         </scan>
                     </scans>
                     <archives>
                         <archive>
+                            <classifier>open-experience-content-author-seed-far</classifier>
+                            <includeClassifier>open-experience-content-author-seed</includeClassifier>
+                        </archive>
+                        <archive>
+                            <classifier>open-experience-content-author-runtime-far</classifier>
+                            <includeClassifier>open-experience-content-author-runtime</includeClassifier>
+                        </archive>
+                        <archive>
+                            <classifier>open-experience-content-standalone-seed-far</classifier>
+                            <includeClassifier>open-experience-content-standalone-seed</includeClassifier>
+                        </archive>
+                        <archive>
+                            <classifier>open-experience-content-standalone-runtime-far</classifier>
+                            <includeClassifier>open-experience-content-standalone-runtime</includeClassifier>
+                        </archive>
+                        <archive>
                             <classifier>open-experience-content-standalone-far</classifier>
                             <includeClassifier>open-experience-content-standalone</includeClassifier>
+                        </archive>
+                        <archive>
+                            <classifier>open-experience-content-renderer-seed-far</classifier>
+                            <includeClassifier>open-experience-content-renderer-seed</includeClassifier>
+                        </archive>
+                        <archive>
+                            <classifier>open-experience-content-renderer-runtime-far</classifier>
+                            <includeClassifier>open-experience-content-renderer-runtime</includeClassifier>
                         </archive>
                     </archives>
                 </configuration>
