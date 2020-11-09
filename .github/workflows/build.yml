@@ -20,5 +20,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Install docker
+      uses: docker-practice/actions-setup-docker@master
+    - name: Docker login
+      run: echo $GH_TOKEN | docker login -u $GH_USERNAME --password-stdin
     - name: Build with Maven
-      run: mvn -B package --file pom.xml -s apache_settings.xml
+      run: mvn -B clean install --file pom.xml

@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <GITHUB_USERNAME>openexperiencecontent</GITHUB_USERNAME>
+        <GITHUB_ORG>openexperiencecloud</GITHUB_ORG>
     </properties>
 
     <modules>
@@ -22,4 +22,17 @@
         <module>author</module>
         <module>renderer</module>
     </modules>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

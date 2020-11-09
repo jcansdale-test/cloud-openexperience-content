@@ -54,7 +54,7 @@
                             <arguments>
                                 <argument>rmi</argument>
                                 <argument>-f</argument>
-                                <argument>ghcr.io/${GITHUB_USERNAME}/${project.artifactId}:${project.version}</argument>
+                                <argument>ghcr.io/${GITHUB_ORG}/${project.artifactId}:${project.version}</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -71,30 +71,8 @@
                             <arguments>
                                 <argument>build</argument>
                                 <argument>-t</argument>
-                                <argument>ghcr.io/${GITHUB_USERNAME}/${project.artifactId}:${project.version}</argument>
+                                <argument>ghcr.io/${GITHUB_ORG}/${project.artifactId}:${project.version}</argument>
                                 <argument>.</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-
-                    <!-- Login and Push the image to a docker repo. -->
-                    <execution>
-                        <id>docker-login</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>docker</executable>
-                            <workingDirectory>${project.basedir}/target/classes</workingDirectory>
-                            <longModulepath>false</longModulepath>
-                            <arguments>
-                                <argument>login</argument>
-                                <argument>-u</argument>
-                                <argument>${GITHUB_USERNAME}</argument>
-                                <argument>-p</argument>
-                                <argument>${GITHUB_TOKEN}</argument>
-                                <argument>ghcr.io</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -109,7 +87,7 @@
                             <workingDirectory>${project.basedir}/target/classes</workingDirectory>
                             <arguments>
                                 <argument>push</argument>
-                                <argument>ghcr.io/${GITHUB_USERNAME}/${project.artifactId}:${project.version}</argument>
+                                <argument>ghcr.io/${GITHUB_ORG}/${project.artifactId}:${project.version}</argument>
                             </arguments>
                         </configuration>
                     </execution>
