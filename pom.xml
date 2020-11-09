@@ -51,11 +51,11 @@ License. -->
     <distributionManagement>
         <snapshotRepository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/OpenExperienceCloud</url>
+            <url>https://maven.pkg.github.com/OpenExperienceCloud/cloud-openexperience-content</url>
         </snapshotRepository>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/OpenExperienceCloud</url>
+            <url>https://maven.pkg.github.com/OpenExperienceCloud/cloud-openexperience-content</url>
         </repository>
     </distributionManagement>
 
