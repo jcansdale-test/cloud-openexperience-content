@@ -1,4 +1,5 @@
 FROM adoptopenjdk:11-jre-openj9
+LABEL org.opencontainers.image.source https://github.com/OpenExperienceCloud/cloud-openexperience-content
 
 # Configure directories
 WORKDIR /opt/oec

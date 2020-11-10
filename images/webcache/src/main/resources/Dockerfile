@@ -11,6 +11,7 @@
 
 # Pull base image.
 FROM ubuntu:latest
+LABEL org.opencontainers.image.source https://github.com/OpenExperienceCloud/cloud-openexperience-content
 
 # Avoid interaction with tzdata
 ARG DEBIAN_FRONTEND=noninteractive
