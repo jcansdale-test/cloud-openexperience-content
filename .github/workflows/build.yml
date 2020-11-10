@@ -28,6 +28,10 @@ jobs:
 #        username: ${{ github.repository_owner }}
 #        password: ${{ secrets.GH_TOKEN }}
 #        registry: ghcr.io
-    - name: Maven Build
-      run: mvn -B clean install --file pom.xml -s apache_settings.xml
+#    - name: Maven Build
+#      run: mvn -B clean install --file pom.xml -s apache_settings.xml
 
+    - name: Maven Deploy
+      run: mvn deploy --file pom.xml -s apache_settings.xml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
