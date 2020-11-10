@@ -32,6 +32,7 @@ jobs:
 #      run: mvn -B clean install --file pom.xml -s apache_settings.xml
 
     - name: Maven Deploy
-      run: mvn deploy --file pom.xml -s apache_settings.xml
+      run: mvn deploy --file pom.xml -s apache_settings.xml --no-transfer-progress
+
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
