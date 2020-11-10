@@ -140,16 +140,6 @@ License. -->
                             </goals>
                             <configuration>
                                 <bnd>
-                                    <![CDATA[
-Bundle-Category: oec
-
--exportcontents: ${removeall;${packages;VERSIONED};${packages;CONDITIONAL}}
-
--snapshot: SNAPSHOT
-
--noextraheaders: true
-
-Bundle-DocURL: https://openexperience.cloud]]>
                                 </bnd>
                             </configuration>
                         </execution>
