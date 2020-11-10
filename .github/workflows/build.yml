@@ -30,3 +30,4 @@ jobs:
         registry: ghcr.io
     - name: Maven Build
       run: mvn -B clean install --file pom.xml -s apache_settings.xml
+
