@@ -56,7 +56,9 @@
     </distributionManagement>
 
     <modules>
+        <!--
         <module>branding</module>
+        -->
         <module>login</module>
         <module>feature</module>
         <module>images</module>
